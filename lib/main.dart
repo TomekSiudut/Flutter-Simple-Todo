@@ -37,7 +37,10 @@ class _TodoListState extends State<TodoList> {
         elevation: 0.0,
         title: const Text('Todo App'),
       ),
-      body: const Text("List View"),
+      body: ListView.builder(
+        itemCount: _todoList.length,
+        itemBuilder: (context, index) => Text(_todoList[index]),
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFF2cdcb4),
         onPressed: () => _displayDialog(context),
